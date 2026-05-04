@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Methodology — Titanos Security</title>
+<meta name="description" content="How Titanos Security scans external attack surfaces. Banner-grade nmap, no exploits, 90-day responsible disclosure window.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#D4AF37;--gold-dim:#8B7225;--ice:#B9F2FF;--black:#000;--card:#0A0A0A;--border:#1A1A1A;--text:#E0E0E0;--dim:#777}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+a{color:var(--ice);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+a:hover{border-bottom-color:var(--ice)}
+nav{padding:20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);z-index:10}
+nav .container{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+nav .brand{font-family:'Cinzel',serif;color:var(--gold);font-weight:700;letter-spacing:.1em}
+nav .links a{margin-left:24px;font-size:.9rem;color:var(--dim)}
+nav .links a:hover{color:var(--ice)}
+section{padding:60px 20px}
+.container{max-width:780px;margin:0 auto}
+.hero{text-align:center;padding:80px 20px 40px}
+h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(2rem,5vw,3rem);color:var(--gold);letter-spacing:.05em;margin-bottom:16px}
+.tagline{font-size:1.1rem;color:var(--dim);max-width:600px;margin:0 auto 24px}
+.line{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--ice),transparent);margin:0 auto 32px}
+h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.5rem;font-weight:700;margin:48px 0 16px;letter-spacing:.04em}
+h3{color:var(--ice);font-size:1.05rem;font-weight:600;margin:24px 0 8px}
+p{margin-bottom:14px;color:var(--text)}
+ul{margin:0 0 16px 24px}
+li{margin-bottom:6px;color:var(--text)}
+.callout{background:var(--card);border-left:3px solid var(--gold);padding:18px 22px;margin:24px 0;border-radius:2px}
+.callout strong{color:var(--gold)}
+.code{font-family:'JetBrains Mono',monospace;background:#0A0A0A;border:1px solid var(--border);padding:2px 8px;border-radius:3px;font-size:.9em;color:var(--ice)}
+footer{padding:40px 20px;border-top:1px solid var(--border);text-align:center;color:var(--dim);font-size:.85rem;margin-top:60px}
+footer a{color:var(--dim)}
+footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <span class="brand">TITANOS</span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Methodology</h1>
+    <p class="tagline">How Titanos Security scans external attack surfaces. No exploits. No auth attempts. Banner-grade evidence only.</p>
+    <div class="line"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <h2>What we scan</h2>
+    <p>External, publicly-reachable network surfaces only. We probe what the open internet can already see — nothing private, nothing authenticated.</p>
+    <ul>
+      <li>Open ports on the customer's domain (standard 15-port sweep)</li>
+      <li>Service banners (returned voluntarily by your services on connect)</li>
+      <li>TLS / SSL certificate validity, expiry, signature</li>
+      <li>HTTP security headers (HSTS, CSP, X-Frame-Options)</li>
+      <li>DNS records (publicly resolvable subdomains via standard zone walks)</li>
+      <li>Known CVEs matching reported service versions</li>
+    </ul>
+
+    <h2>What we don't do</h2>
+    <p>If a tool would require permission, we don't use it. Period.</p>
+    <ul>
+      <li>No authentication attempts (no password guessing, no credential stuffing)</li>
+      <li>No exploit attempts (we never try to use a vulnerability we find)</li>
+      <li>No DoS / DDoS / brute force / aggressive scans</li>
+      <li>No data exfiltration (we never read DB contents, file contents, email contents)</li>
+      <li>No phishing of staff (we don't email or call your team to test them)</li>
+      <li>No physical / social engineering tests</li>
+    </ul>
+
+    <h2>Tools used</h2>
+    <p>We use industry-standard open-source security tooling — the same tools your auditors and threat-modellers use.</p>
+    <ul>
+      <li><span class="code">nmap</span> with banner detection (<span class="code">-sV</span>) — port + service identification</li>
+      <li><span class="code">openssl s_client</span> — TLS validation</li>
+      <li><span class="code">curl</span> with custom headers — HTTP response inspection</li>
+      <li><span class="code">dig</span> + <span class="code">crt.sh</span> — DNS + certificate-transparency lookups</li>
+      <li>NVD CVE database (publicly licensed) for version → known-vuln mapping</li>
+    </ul>
+
+    <h2>Responsible disclosure</h2>
+    <div class="callout">
+      <strong>Every Titanos finding ships with a 90-day responsible disclosure window.</strong> If a recipient needs more time to remediate, we extend it. We do not publish, sell, or share findings with third parties during that window.
+    </div>
+    <p>This is the same practice followed by national CERTs (AustCERT, CERT NZ, CSA Singapore) and by responsible security researchers. The window exists so the affected business has time to act.</p>
+
+    <h2>Scope</h2>
+    <p>We scan organisations across Australia, New Zealand, and Singapore — typically B2B SaaS, mid-market commercial, and listed companies. We do not scan:</p>
+    <ul>
+      <li>Government domains (.gov.au, .gov.nz, .gov.sg, .govt.nz, .edu.au)</li>
+      <li>Critical infrastructure operators</li>
+      <li>Companies that have asked to be removed (suppression list honoured forever)</li>
+      <li>Domains that don't resolve or have no public services</li>
+    </ul>
+
+    <h2>What you get</h2>
+    <p>Our standard external scan output:</p>
+    <ul>
+      <li>Findings ranked by severity (Critical, High, Medium, Low, Info)</li>
+      <li>For each finding: the evidence, the affected port/service, and a remediation step</li>
+      <li>For each finding: reproduction command (so your engineering team can verify independently)</li>
+      <li>Summary suitable for sharing with auditors, insurers, or your board</li>
+    </ul>
+
+    <h2>How we deliver</h2>
+    <p>Free protective disclosure: a hosted HTML report at <span class="code">api.titanos.tech/r/{slug}/</span> for each affected organisation. No signup required. Each URL is unique to the recipient and includes a robots-noindex tag so the report is not search-indexed.</p>
+    <p>Optional paid engagements (Critical Exposure Brief, Compliance Gap Analysis, Vendor Risk Bundle, Sentinel monitoring, Governance Framework) are listed at <a href="/">titanos.tech</a>. All paid engagements include a money-back guarantee.</p>
+
+    <h2>How to verify us</h2>
+    <p>Three independent ways:</p>
+    <ul>
+      <li>Verify the ABN below at <a href="https://abr.business.gov.au/">abr.business.gov.au</a></li>
+      <li>Reproduce any finding using the <span class="code">nmap -sV {target} -p {port}</span> command included in the report</li>
+      <li>Email <a href="mailto:kyle@titanos.tech">kyle@titanos.tech</a> directly to confirm any communication is genuine</li>
+    </ul>
+
+    <h2>Removal</h2>
+    <p>Reply <span class="code">remove</span> to any email from us and your domain is suppressed permanently. We honour the request immediately.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div><a href="/">titanos.tech</a> · <a href="/methodology.html">Methodology</a> · <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a></div>
+    <div class="abn">Titanos Security · Kyle Deligny · ABN 34 318 502 254 · Sydney, AU</div>
+  </div>
+</footer>
+
+</body>
+</html>
