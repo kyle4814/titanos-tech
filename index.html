@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Titanos Security — External attack-surface scanning for AU/NZ/SG SaaS</title>
-<meta name="description" content="External perimeter scanning + responsible disclosure for AU/NZ/SG B2B SaaS. 1,700+ scans run this month. ABN 34 318 502 254.">
+<title>TITANOS — Specialist delivery for security and enterprise AI</title>
+<meta name="description" content="TITANOS is a specialist consultancy delivering security and enterprise AI capabilities to AU/NZ/SG operators. Two businesses: Titanos Security and Titanos AI Delivery. Powered by Claude Code Opus 4.7. ABN 34 318 502 254.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Titanos Security">
-<meta property="og:description" content="External attack-surface scanning for AU/NZ/SG SaaS.">
+<meta property="og:title" content="TITANOS — Security and enterprise AI delivery">
+<meta property="og:description" content="Specialist delivery for security and enterprise AI. Two businesses, one operating system. Powered by Claude Code Opus 4.7.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,6 +68,39 @@ section{padding:80px 20px;position:relative}
 .trust .item{font-size:.85rem;color:var(--dim)}
 .trust .item strong{display:block;color:var(--gold);font-family:'Cinzel',serif;font-size:1.4rem;margin-bottom:4px;letter-spacing:.04em}
 
+/* Business catalogue cards */
+.biz-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:920px;margin:0 auto}
+@media(min-width:760px){.biz-grid{grid-template-columns:1fr 1fr;gap:28px}}
+.biz{background:var(--card);border:1px solid var(--gold-dim);border-radius:8px;padding:36px 30px;
+     display:flex;flex-direction:column;position:relative;z-index:1;transition:border-color .2s,transform .2s}
+.biz:hover{border-color:var(--gold);transform:translateY(-2px)}
+.biz .tag{font-family:'Cinzel',serif;color:var(--ice);font-size:.72rem;letter-spacing:.16em;margin-bottom:12px}
+.biz h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;letter-spacing:.06em;margin-bottom:14px;line-height:1.25}
+.biz p{color:var(--text);font-size:.95rem;line-height:1.7;margin-bottom:18px;flex-grow:1}
+.biz ul{margin:0 0 22px 0;list-style:none}
+.biz li{color:var(--dim);font-size:.85rem;line-height:1.6;padding:5px 0;padding-left:18px;position:relative}
+.biz li::before{content:'›';position:absolute;left:0;color:var(--gold);font-family:'Cinzel',serif}
+.biz .biz-cta{display:inline-flex;align-items:center;align-self:flex-start;padding:11px 22px;border:1px solid var(--gold-dim);border-radius:3px;
+              color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.08em;
+              transition:all .2s;background:rgba(212,175,55,.04);min-height:44px}
+.biz .biz-cta:hover{background:rgba(212,175,55,.12);border-color:var(--gold);border-bottom-color:var(--gold)}
+
+/* AI Delivery scope bands */
+.bands-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:1020px;margin:0 auto}
+@media(min-width:760px){.bands-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+.band{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:28px 24px;display:flex;flex-direction:column;transition:border-color .2s}
+.band:hover{border-color:var(--gold-dim)}
+.band.middle{border-color:var(--gold-dim)}
+.band .tier{font-family:'Cinzel',serif;color:var(--ice);font-size:.72rem;letter-spacing:.16em;margin-bottom:8px}
+.band .from{font-family:'Cinzel',serif;color:var(--gold);font-size:1.7rem;font-weight:700;line-height:1.1}
+.band .unit{color:var(--dim);font-size:.78rem;display:block;margin-top:4px}
+.band .body{color:var(--text);font-size:.88rem;line-height:1.7;margin:16px 0 18px;flex-grow:1}
+.band ul{list-style:none;margin-bottom:18px}
+.band li{color:var(--dim);font-size:.82rem;line-height:1.55;padding:3px 0;padding-left:14px;position:relative}
+.band li::before{content:'·';position:absolute;left:2px;color:var(--gold)}
+.band-cta{display:inline-flex;align-items:center;align-self:flex-start;padding:10px 18px;border:1px solid var(--gold-dim);border-radius:3px;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.06em;transition:all .2s;min-height:44px}
+.band-cta:hover{background:rgba(212,175,55,.12);border-color:var(--gold);border-bottom-color:var(--gold)}
+
 /* Methodology preview */
 .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:900px;margin:0 auto}
 .method .card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px}
@@ -100,7 +133,9 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <div class="container">
     <span class="brand">TITANOS</span>
     <div class="links">
-      <a href="#services">Services</a>
+      <a href="#businesses">Businesses</a>
+      <a href="#security">Security</a>
+      <a href="/ai-delivery.html">AI Delivery</a>
       <a href="/methodology.html">Methodology</a>
       <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a>
     </div>
@@ -109,20 +144,61 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 
 <section class="hero">
   <div class="container">
-    <h1>TITANOS SECURITY</h1>
-    <p class="tagline">External attack-surface scanning for AU, NZ, and SG SaaS.</p>
-    <p class="sub">We scan the public internet for the exposures your auditors and your buyers will find — and tell you first.</p>
-    <div class="live-stat">1,700+ scans run this month</div>
+    <h1>TITANOS</h1>
+    <p class="tagline">Specialist delivery for security and enterprise AI.</p>
+    <p class="sub">Two businesses operating under one roof. Capabilities that ship — built, verified, and delivered by a Claude Code Opus 4.7 instance under expert human review.</p>
+    <div class="live-stat">1,700+ scans run this month · powered by Claude Code Opus 4.7</div>
     <div class="line"></div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section id="services">
+<!-- ═══ BUSINESS CATALOGUE ═══ -->
+<section id="businesses">
   <div class="container">
     <div class="sh">
-      <h2>WHAT WE DO</h2>
+      <h2>THE CATALOGUE</h2>
+      <div class="line"></div>
+    </div>
+    <div class="biz-grid">
+
+      <div class="biz">
+        <div class="tag">BUSINESS 01 · SECURITY</div>
+        <h3>Titanos Security</h3>
+        <p>External attack-surface scanning, M&amp;A pre-acquisition DD, portfolio monitoring, and 24/7 AI security operations for AU/NZ/SG operators.</p>
+        <ul>
+          <li>AI Security Sentinel · $2,997/mo</li>
+          <li>M&amp;A pre-acquisition security DD · $7,997 / $14,997</li>
+          <li>Portfolio monitoring for VC/PE · tiered MRR</li>
+          <li>One-shot vulnerability scans &amp; reports · from $50</li>
+        </ul>
+        <a href="#security" class="biz-cta">View security catalogue ›</a>
+      </div>
+
+      <div class="biz">
+        <div class="tag">BUSINESS 02 · AI DELIVERY</div>
+        <h3>Titanos AI Delivery</h3>
+        <p>Enterprise AI capabilities delivered end-to-end. Prototype, integration, custom build. 99% Claude Code Opus 4.7, 1% expert human review. Priced by project scope.</p>
+        <ul>
+          <li>Prototype band · 2-6 weeks, fixed scope</li>
+          <li>Integration band · 6-14 weeks, milestone-billed</li>
+          <li>Custom build · multi-quarter, scoped engagement</li>
+          <li>Scope-call first, quote second, ship third</li>
+        </ul>
+        <a href="/ai-delivery.html" class="biz-cta">Explore AI Delivery ›</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="security">
+  <div class="container">
+    <div class="sh">
+      <h2>SECURITY · WHAT WE DO</h2>
       <div class="line"></div>
     </div>
     <div class="svc-grid">
@@ -182,6 +258,61 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   </div>
 </div>
 
+<!-- ═══ AI DELIVERY ═══ -->
+<section id="ai-delivery">
+  <div class="container">
+    <div class="sh">
+      <h2>AI DELIVERY · PROJECT BANDS</h2>
+      <div class="line"></div>
+    </div>
+    <p style="text-align:center;color:var(--ice);max-width:680px;margin:0 auto 36px;font-size:1rem;line-height:1.75">
+      Enterprise AI capabilities delivered to your environment. Working code in your repo, deployed by close, documented for handover. Project-scope priced. 99% Claude Code Opus 4.7, 1% expert human review.
+    </p>
+    <div class="bands-grid">
+
+      <div class="band">
+        <div class="tier">PROTOTYPE</div>
+        <div class="from">From $40K<span class="unit">2-6 weeks · fixed scope</span></div>
+        <p class="body">End-to-end working prototype of one AI capability. Suitable for proof-of-value before broader rollout.</p>
+        <ul>
+          <li>One model, one workflow, one user surface</li>
+          <li>Deployed to staging by week 2</li>
+          <li>Demo + handover doc on close</li>
+        </ul>
+        <a href="/ai-delivery.html#prototype" class="band-cta">SCOPE A PROTOTYPE ›</a>
+      </div>
+
+      <div class="band middle">
+        <div class="tier">INTEGRATION</div>
+        <div class="from">From $120K<span class="unit">6-14 weeks · milestone-billed</span></div>
+        <p class="body">Production-grade AI capability integrated into your live systems. The most common engagement shape.</p>
+        <ul>
+          <li>Auth, logging, monitoring, fallback path</li>
+          <li>Integrated with CRM / ERP / warehouse</li>
+          <li>Threat model + runbook + test coverage</li>
+        </ul>
+        <a href="/ai-delivery.html#integration" class="band-cta">SCOPE AN INTEGRATION ›</a>
+      </div>
+
+      <div class="band">
+        <div class="tier">CUSTOM BUILD</div>
+        <div class="from">Quoted<span class="unit">multi-quarter · scoped engagement</span></div>
+        <p class="body">Multi-capability builds, multi-system integrations, or AI-native product surfaces. Quoted after deeper discovery.</p>
+        <ul>
+          <li>2-3 hour deep-dive discovery first</li>
+          <li>Phased SOW with go/no-go gates</li>
+          <li>For programs $250K+ total</li>
+        </ul>
+        <a href="/ai-delivery.html#custom" class="band-cta">BOOK A DISCOVERY ›</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;margin-top:36px"><a href="/ai-delivery.html" style="color:var(--gold);border-bottom-color:var(--gold-dim)">Full AI Delivery page ›</a></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <section>
   <div class="container">
     <div class="sh">
@@ -219,22 +350,24 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <div class="divider"></div>
 
 <section class="cta">
-  <h2>SEE WHAT YOUR PERIMETER LOOKS LIKE</h2>
-  <p>Free protective disclosure scan. 90-day window. No signup. We tell you first.</p>
+  <h2>ONE OPERATOR. TWO BUSINESSES. REAL CAPABILITIES.</h2>
+  <p>Whichever business maps to your problem, the path is the same: tell us what you'd build if delivery wasn't the bottleneck, and we'll scope it.</p>
   <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn">Book a 15-min walkthrough</a>
-  <a href="mailto:kyle@titanos.tech?subject=Scan request" class="btn secondary">Email Kyle</a>
+  <a href="mailto:kyle@titanos.tech?subject=Titanos enquiry" class="btn secondary">Email Kyle</a>
 </section>
 
 <footer>
   <div class="container">
     <div class="links">
       <a href="/">Home</a>
+      <a href="#security">Security</a>
+      <a href="/ai-delivery.html">AI Delivery</a>
       <a href="/methodology.html">Methodology</a>
       <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a>
       <a href="mailto:kyle@titanos.tech">kyle@titanos.tech</a>
     </div>
-    <div>Titanos Security · Kyle Deligny · Sydney, Australia</div>
-    <div class="abn">ABN 34 318 502 254 · titanos.tech</div>
+    <div>TITANOS · Kyle Deligny · Sydney, Australia</div>
+    <div class="abn">ABN 34 318 502 254 · titanos.tech · powered by Claude Code Opus 4.7</div>
   </div>
 </footer>
 
