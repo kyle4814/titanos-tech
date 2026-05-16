@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AU Privacy Act + Essential Eight Compliance for SMBs — 11 December 2026 Deadline | Titanos</title>
+<meta name="description" content="Australian Privacy Act compliance pack for SMBs. Three tiers from AU$1,200. Built for the 11 December 2026 ADM disclosure deadline. ABN 34 318 502 254.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Australian Privacy Act Compliance for SMBs — Titanos">
+<meta property="og:description" content="Get compliant before 11 December 2026. AU$2,400 audit + AU$199/mo monitoring. Built for Australian SMBs on hosted services.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Titanos AU Privacy Act + Essential Eight Compliance Pack",
+  "description": "Three-tier compliance pack for Australian SMBs facing the 11 December 2026 Privacy Act ADM disclosure deadline. Includes evidence pack PDF, external attack-surface scan, M365/Google Workspace hardening guides, NDB runbook, vendor risk register, and quarterly continuous monitoring.",
+  "brand": {"@type": "Organization", "name": "Titanos", "url": "https://titanos.tech"},
+  "offers": [
+    {"@type": "Offer", "name": "Self-Service", "price": "1200", "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "url": "https://api.titanos.tech/compliance/buy/self_service"},
+    {"@type": "Offer", "name": "Done-With-You", "price": "2400", "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "url": "https://api.titanos.tech/compliance/buy/done_with_you"},
+    {"@type": "Offer", "name": "Done-For-You", "price": "4500", "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "url": "https://api.titanos.tech/compliance/buy/done_for_you"}
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#D4AF37;--gold-dim:#8B7225;--ice:#B9F2FF;--black:#000;--card:#0A0A0A;--border:#1A1A1A;--text:#E0E0E0;--dim:#777;--ok:#4ade80;--no:#f87171}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+a{color:var(--ice);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+a:hover{border-bottom-color:var(--ice)}
+
+nav{padding:20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);z-index:10}
+nav .container{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+nav .brand{font-family:'Cinzel',serif;color:var(--gold);font-weight:700;letter-spacing:.1em}
+nav .brand a{color:var(--gold);border-bottom:none}
+nav .links a{margin-left:24px;font-size:.9rem;color:var(--dim)}
+nav .links a:hover{color:var(--ice)}
+
+section{padding:80px 20px;position:relative}
+.container{max-width:1080px;margin:0 auto}
+
+.particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.dot{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:0;animation:drift linear infinite}
+@keyframes drift{0%{opacity:0;transform:translateY(100vh)}8%{opacity:.1}50%{opacity:.1}92%{opacity:.05}100%{opacity:0;transform:translateY(-5vh)}}
+
+.hero{text-align:center;padding:100px 20px 70px;position:relative;z-index:1}
+.hero .badge{display:inline-block;border:1px solid var(--gold-dim);padding:6px 16px;border-radius:24px;font-family:'Cinzel',serif;font-size:.78rem;color:var(--ice);letter-spacing:.1em;margin-bottom:24px}
+.hero h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(2.2rem,5.5vw,3.6rem);color:var(--gold);letter-spacing:.04em;margin-bottom:18px;line-height:1.18}
+.hero .tagline{font-size:1.15rem;color:var(--ice);max-width:760px;margin:0 auto 16px;font-weight:300;line-height:1.6}
+.hero .sub{font-size:.95rem;color:var(--dim);max-width:680px;margin:0 auto 32px;line-height:1.7}
+.hero .trust-line{font-size:.85rem;color:var(--dim);max-width:680px;margin:18px auto 0}
+.hero .trust-line strong{color:var(--gold)}
+.line{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--ice),transparent);margin:24px auto 0}
+
+.btn{display:inline-block;padding:16px 32px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.08em;font-size:.92rem;border-radius:3px;transition:all .2s}
+.btn:hover{background:var(--gold);color:var(--black);border-bottom-color:var(--gold)}
+.btn.secondary{margin-left:10px;border-color:var(--gold-dim);color:var(--dim)}
+.btn.secondary:hover{background:var(--gold-dim);color:var(--black);border-color:var(--gold-dim)}
+
+.sh{text-align:center;margin-bottom:42px;position:relative;z-index:1}
+.sh h2{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.4rem,3.5vw,2.2rem);color:var(--gold);letter-spacing:.08em}
+.sh .lead{color:var(--ice);font-size:1rem;max-width:680px;margin:18px auto 0;line-height:1.7}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:0 20px}
+
+/* Tier cards */
+.tiers{display:grid;grid-template-columns:1fr;gap:18px;max-width:1020px;margin:0 auto}
+@media(min-width:760px){.tiers{grid-template-columns:repeat(3,1fr);gap:22px}}
+.tier-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:30px 26px;display:flex;flex-direction:column;transition:border-color .2s;position:relative}
+.tier-card:hover{border-color:var(--gold-dim)}
+.tier-card.middle{border-color:var(--gold-dim)}
+.tier-card.middle::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--black);border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.7rem;padding:4px 14px;border-radius:14px;letter-spacing:.12em}
+.tier-card .tier{font-family:'Cinzel',serif;color:var(--ice);font-size:.74rem;letter-spacing:.16em;margin-bottom:10px}
+.tier-card .from{font-family:'Cinzel',serif;color:var(--gold);font-size:1.9rem;font-weight:700;line-height:1.1}
+.tier-card .unit{color:var(--dim);font-size:.8rem;display:block;margin-top:4px}
+.tier-card .body{color:var(--text);font-size:.9rem;line-height:1.7;margin:18px 0 18px;flex-grow:1}
+.tier-card ul{list-style:none;margin-bottom:22px}
+.tier-card li{color:var(--dim);font-size:.84rem;line-height:1.6;padding:4px 0;padding-left:16px;position:relative}
+.tier-card li::before{content:'›';position:absolute;left:0;color:var(--gold);font-family:'Cinzel',serif}
+.tier-cta{display:inline-flex;align-items:center;align-self:flex-start;padding:12px 22px;border:1px solid var(--gold-dim);border-radius:3px;color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.08em;transition:all .2s;min-height:44px}
+.tier-cta:hover{background:rgba(212,175,55,.12);border-color:var(--gold);border-bottom-color:var(--gold)}
+
+/* Timeline */
+.timeline{max-width:760px;margin:0 auto;position:relative;z-index:1;border-left:2px solid var(--gold-dim);padding:8px 0 8px 30px}
+.tl-item{position:relative;padding:14px 0 22px;color:var(--text)}
+.tl-item::before{content:'';position:absolute;left:-38px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--gold-dim)}
+.tl-item.live::before{border-color:var(--gold);background:var(--gold)}
+.tl-item.future::before{border-color:var(--ice);background:var(--card)}
+.tl-item.coming::before{border-color:var(--dim);background:var(--card);border-style:dashed}
+.tl-item .when{font-family:'Cinzel',serif;color:var(--gold);font-size:.85rem;letter-spacing:.06em;margin-bottom:4px}
+.tl-item.coming .when{color:var(--dim)}
+.tl-item h4{color:var(--ice);font-size:1rem;font-weight:600;margin-bottom:6px}
+.tl-item p{color:var(--dim);font-size:.88rem;line-height:1.6}
+
+/* You vs host two-column */
+.you-host{display:grid;grid-template-columns:1fr;gap:20px;max-width:1020px;margin:0 auto}
+@media(min-width:760px){.you-host{grid-template-columns:1fr 1fr;gap:28px}}
+.you-host .col{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:30px 26px}
+.you-host .col.you{border-color:var(--gold-dim)}
+.you-host h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.15rem;letter-spacing:.06em;margin-bottom:6px;line-height:1.3}
+.you-host .col.host h3{color:var(--ice)}
+.you-host .sub{color:var(--dim);font-size:.84rem;margin-bottom:18px;line-height:1.5}
+.you-host ul{list-style:none}
+.you-host li{color:var(--text);font-size:.92rem;line-height:1.7;padding:6px 0;padding-left:22px;position:relative}
+.you-host .col.you li::before{content:'✓';position:absolute;left:0;color:var(--ok);font-weight:600}
+.you-host .col.host li::before{content:'→';position:absolute;left:0;color:var(--ice)}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:5px;margin-bottom:12px;transition:border-color .2s}
+.faq details[open]{border-color:var(--gold-dim)}
+.faq summary{cursor:pointer;padding:18px 22px;color:var(--ice);font-weight:500;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;align-items:center;outline:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-left:14px;flex-shrink:0}
+.faq details[open] summary::after{content:'−'}
+.faq .answer{padding:0 22px 22px;color:var(--text);font-size:.92rem;line-height:1.75}
+
+/* Trust strip */
+.trust{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:50px 20px;text-align:center;position:relative;z-index:1}
+.trust .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:900px;margin:0 auto}
+.trust .item{font-size:.85rem;color:var(--dim)}
+.trust .item strong{display:block;color:var(--gold);font-family:'Cinzel',serif;font-size:1.4rem;margin-bottom:4px;letter-spacing:.04em}
+.trust .founder{color:var(--ice);font-size:.95rem;max-width:680px;margin:32px auto 0;line-height:1.7}
+
+/* CTA */
+.cta{text-align:center;padding:90px 20px;position:relative;z-index:1}
+.cta h2{font-family:'Cinzel',serif;color:var(--gold);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;margin-bottom:14px;letter-spacing:.05em}
+.cta p{color:var(--ice);font-size:1.02rem;margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* Cross-links */
+.xlinks{text-align:center;padding:60px 20px;position:relative;z-index:1}
+.xlinks p{color:var(--dim);font-size:.95rem;margin-bottom:10px}
+.xlinks a{color:var(--gold);border-bottom-color:var(--gold-dim);margin:0 8px}
+
+footer{padding:50px 20px;border-top:1px solid var(--border);text-align:center;color:var(--dim);font-size:.85rem;position:relative;z-index:1}
+footer a{color:var(--dim)}
+footer .links{margin-bottom:14px}
+footer .links a{margin:0 12px}
+footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
+</style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<nav>
+  <div class="container">
+    <span class="brand"><a href="/">TITANOS</a></span>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/#security">Security</a>
+      <a href="/compliance.html">Compliance</a>
+      <a href="/ai-delivery.html">AI Delivery</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">DEADLINE · 11 DECEMBER 2026</div>
+    <h1>Australian Privacy Act Compliance for SMBs</h1>
+    <p class="tagline">New privacy laws take effect 11 December 2026. Penalties up to AU$50 million. Most SMBs have no plan.</p>
+    <p class="sub">We do the diagnostic, give you the evidence pack, and document what your hosting provider needs to fix. Built for Australian SMBs on Squarespace, WordPress, Microsoft 365, and Google Workspace.</p>
+    <div style="margin-top:14px">
+      <a href="https://api.titanos.tech/compliance/buy/done_with_you" class="btn">Buy Done-With-You · $2,400</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn secondary">Book a 15-min</a>
+    </div>
+    <p class="trust-line"><strong>ABN 34 318 502 254</strong> &middot; Australian-owned &middot; 3,633 businesses scanned &middot; <a href="/methodology.html" style="color:var(--ice)">Methodology</a></p>
+    <div class="line"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ THE THREE TIERS ═══ -->
+<section id="tiers">
+  <div class="container">
+    <div class="sh">
+      <h2>THREE TIERS</h2>
+      <div class="line"></div>
+      <p class="lead">Pick what matches your bandwidth. The PDF is the same evidence pack at every tier. What changes is how much of the implementation we do for you.</p>
+    </div>
+    <div class="tiers">
+
+      <div class="tier-card" id="self-service">
+        <div class="tier">SELF-SERVICE</div>
+        <div class="from">$1,200<span class="unit">AUD one-time &middot; PDF only</span></div>
+        <p class="body">Complete compliance evidence pack delivered as PDF. Privacy policy template with ADM disclosure language. Essential Eight ML1 attestation worksheet. Notifiable Data Breaches runbook. Vendor risk register template. DNS hygiene + Microsoft 365 / Google Workspace hardening guides. You implement everything yourself.</p>
+        <ul>
+          <li>13 sections, 17+ pages</li>
+          <li>ANZSIC-tuned vendor lists</li>
+          <li>Instant delivery on purchase</li>
+          <li>No call, no walkthrough</li>
+        </ul>
+        <a href="https://api.titanos.tech/compliance/buy/self_service" class="tier-cta">BUY SELF-SERVICE ›</a>
+      </div>
+
+      <div class="tier-card middle" id="done-with-you">
+        <div class="tier">DONE-WITH-YOU</div>
+        <div class="from">$2,400<span class="unit">AUD one-time + $199/mo</span></div>
+        <p class="body">Everything in Self-Service, plus: external attack-surface scan of your domain with findings categorised by &ldquo;you can fix&rdquo; vs &ldquo;your hosting provider needs to fix.&rdquo; 60-minute video walkthrough call to implement together. Quarterly re-scan with delta report. Continuous monitoring.</p>
+        <ul>
+          <li>External scan + hosting-split findings</li>
+          <li>60-min implementation walkthrough</li>
+          <li>Quarterly re-scan + delta report</li>
+          <li>$199/mo monitoring add-on available</li>
+        </ul>
+        <a href="https://api.titanos.tech/compliance/buy/done_with_you" class="tier-cta">BUY DONE-WITH-YOU ›</a>
+      </div>
+
+      <div class="tier-card" id="done-for-you">
+        <div class="tier">DONE-FOR-YOU</div>
+        <div class="from">$4,500<span class="unit">AUD one-time + $199/mo</span></div>
+        <p class="body">Everything in Done-With-You, plus: we implement the DNS hygiene changes, Microsoft 365 / Google Workspace hardening, privacy policy deployment, and breach response runbook integration. You sign off; we do the work. Quarterly continuous monitoring included.</p>
+        <ul>
+          <li>Full implementation by Titanos</li>
+          <li>Kickoff scheduled within 24h</li>
+          <li>Continuous monitoring included</li>
+          <li>You sign off, we ship</li>
+        </ul>
+        <a href="https://api.titanos.tech/compliance/buy/done_for_you" class="tier-cta">BUY DONE-FOR-YOU ›</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ DEADLINE TIMELINE ═══ -->
+<section id="timeline">
+  <div class="container">
+    <div class="sh">
+      <h2>WHAT&rsquo;S COMING &middot; FOUR DEADLINES</h2>
+      <div class="line"></div>
+      <p class="lead">Four legal pressure points stack between now and 11 December 2026. The compliance pack covers them all in one pass.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item live">
+        <div class="when">10 JUNE 2025 &middot; LIVE</div>
+        <h4>Statutory tort for serious privacy invasions</h4>
+        <p>Already in effect. Individuals can sue directly for serious invasions of privacy &mdash; no need to wait for the OAIC.</p>
+      </div>
+
+      <div class="tl-item live">
+        <div class="when">4 MARCH 2026 &middot; LIVE</div>
+        <h4>Mandatory IoT security standards take effect</h4>
+        <p>Connected-device makers and importers face baseline security requirements. Cascades to any business reselling or operating IoT.</p>
+      </div>
+
+      <div class="tl-item future">
+        <div class="when">2 AUGUST 2026</div>
+        <h4>EU AI Act enforcement begins</h4>
+        <p>Applies to AU companies with EU customers. Transparency, risk-classification, and conformity obligations.</p>
+      </div>
+
+      <div class="tl-item future">
+        <div class="when">11 DECEMBER 2026 &middot; THE ONE</div>
+        <h4>ADM disclosure required in all privacy policies</h4>
+        <p>Automated Decision-Making used in any business process must be disclosed in your privacy policy with affected-decision categories, types of personal information used, and process explanation. Penalties up to AU$50M.</p>
+      </div>
+
+      <div class="tl-item coming">
+        <div class="when">TRANCHE 2 &middot; COMING</div>
+        <h4>Small-business exemption removal</h4>
+        <p>Pulls ~2.3M additional AU SMBs into Privacy Act scope. The current AU$3M turnover exemption is expected to be repealed in the second reform tranche.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ YOU CONTROL vs HOSTING PROVIDER ═══ -->
+<section id="you-host">
+  <div class="container">
+    <div class="sh">
+      <h2>YOU CONTROL SOME &middot; YOUR HOST CONTROLS THE REST</h2>
+      <div class="line"></div>
+      <p class="lead">Your hosting service controls some things. We tell you what to ask them to fix, and document the rest as &ldquo;reasonable steps taken.&rdquo;</p>
+    </div>
+    <div class="you-host">
+
+      <div class="col you">
+        <h3>YOU CONTROL</h3>
+        <p class="sub">We help you fix these directly.</p>
+        <ul>
+          <li>Privacy policy content + ADM disclosure</li>
+          <li>DNS hygiene (SPF, DKIM, DMARC, CAA records)</li>
+          <li>Microsoft 365 / Google Workspace security defaults</li>
+          <li>MFA enablement across team</li>
+          <li>Breach response process documentation</li>
+          <li>Vendor risk register</li>
+          <li>Essential Eight ML1 self-attestation</li>
+          <li>Staff access management</li>
+        </ul>
+      </div>
+
+      <div class="col host">
+        <h3>YOUR HOSTING PROVIDER CONTROLS</h3>
+        <p class="sub">We tell you exactly how to escalate.</p>
+        <ul>
+          <li>TLS/SSL certificate management on hosted sites</li>
+          <li>HSTS headers on Squarespace / Shopify / Wix</li>
+          <li>Server-side security configurations</li>
+          <li>DDoS protection on hosted infrastructure</li>
+          <li>Database security on SaaS like Xero, Cliniko, Vend</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="grid">
+    <div class="item"><strong>13</strong>sections per pack</div>
+    <div class="item"><strong>8</strong>ANZSIC class tunings</div>
+    <div class="item"><strong>3,633</strong>businesses scanned</div>
+    <div class="item"><strong>11 Dec 2026</strong>deadline target</div>
+  </div>
+  <p class="founder">Built by an Australian operator. Reports stay in Australia. No US-headquartered data processors. <strong style="color:var(--gold)">Kyle Deligny, ABN 34 318 502 254.</strong></p>
+</div>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="container">
+    <div class="sh">
+      <h2>QUESTIONS WE GET</h2>
+      <div class="line"></div>
+    </div>
+    <div class="faq">
+
+      <details>
+        <summary>I&rsquo;m too small for this to matter</summary>
+        <div class="answer">Tranche 2 reforms are positioned to remove the AU$3M small-business turnover exemption, pulling roughly 2.3M additional SMBs into Privacy Act scope. Penalties already reach AU$50M for serious or repeated interference with privacy. The bigger SMB risk is reputational &mdash; a single breach notification triggers commercial and customer fallout regardless of OAIC fine.</div>
+      </details>
+
+      <details>
+        <summary>Our website is on Squarespace &mdash; can you even help?</summary>
+        <div class="answer">Yes. The audit works on any hosting provider. We document what you control (privacy policy, DNS records, account-level MFA, vendor register) versus what Squarespace controls (TLS, HSTS, server config), and give you the exact escalation language for the bits they own.</div>
+      </details>
+
+      <details>
+        <summary>We use Microsoft 365 &mdash; do you cover that?</summary>
+        <div class="answer">Yes. The pack includes a Microsoft 365 hardening guide with 8 admin-console changes that satisfy most Essential Eight ML1 requirements. A 15-minute admin change typically covers MFA, conditional access, and audit logging.</div>
+      </details>
+
+      <details>
+        <summary>We don&rsquo;t have an IT person</summary>
+        <div class="answer">That&rsquo;s exactly why Done-With-You and Done-For-You exist. Done-With-You includes a 60-minute walkthrough where we implement together. Done-For-You we do the work and you sign off. Most SMBs without dedicated IT pick one of these.</div>
+      </details>
+
+      <details>
+        <summary>What&rsquo;s the difference between this and Vanta or Drata?</summary>
+        <div class="answer">Vanta and Drata are US$10&ndash;15K/yr enterprise compliance tools shaped for SOC 2. We&rsquo;re an AU$2,400 one-time pack shaped for AU SMBs facing Privacy Act + Essential Eight. Different buyer, different price, different geography, different framework. If you&rsquo;re selling into US enterprise and need SOC 2, you want Vanta. If you&rsquo;re an AU SMB facing the 11 December 2026 deadline, you want this.</div>
+      </details>
+
+      <details>
+        <summary>What if my hosting provider won&rsquo;t fix what you find?</summary>
+        <div class="answer">We give you the exact escalation language. If they refuse, you have documented evidence of having taken &ldquo;reasonable steps&rdquo; &mdash; the standard the OAIC actually assesses against. A regulator wants to see the request, the response, and your follow-up plan; we hand you all three.</div>
+      </details>
+
+      <details>
+        <summary>Can you guarantee I&rsquo;ll be compliant?</summary>
+        <div class="answer">No vendor honestly can &mdash; compliance is determined by the regulator on the facts of a specific incident. What we give you is the evidence pack regulators expect to see when assessing whether you took &ldquo;reasonable steps.&rdquo; That is the actual standard the Act applies.</div>
+      </details>
+
+      <details>
+        <summary>How fast can we get this done?</summary>
+        <div class="answer">Self-Service: instant PDF delivery on Stripe checkout. Done-With-You: scan within 48 hours, walkthrough call within 7 days. Done-For-You: full implementation typically within 14 days of kickoff. We&rsquo;ll email within 24 hours of DFY purchase to schedule.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ CROSS-LINKS ═══ -->
+<div class="xlinks">
+  <p>Want to see your current security exposure first? <a href="https://api.titanos.tech/lookup">Free lookup &rarr;</a></p>
+  <p>Already have a privacy plan? Add continuous monitoring &rarr; <a href="/#security">Titanos Security</a> &middot; <a href="https://api.titanos.tech/sentinel">Sentinel 24/7</a></p>
+</div>
+
+<section class="cta">
+  <h2>SHIP COMPLIANCE BEFORE THE DEADLINE</h2>
+  <p>Three tiers, one outcome: an evidence pack a regulator accepts as &ldquo;reasonable steps.&rdquo; The middle tier closes the most because it removes the lonely-SMB-with-PDF problem.</p>
+  <a href="https://api.titanos.tech/compliance/buy/done_with_you" class="btn">Buy Done-With-You · $2,400</a>
+  <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn secondary">Book a 15-min first</a>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/#security">Security</a>
+      <a href="/compliance.html">Compliance</a>
+      <a href="/ai-delivery.html">AI Delivery</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a 15-min</a>
+      <a href="mailto:kyle@titanos.tech">kyle@titanos.tech</a>
+    </div>
+    <div>TITANOS &middot; Kyle Deligny &middot; Australia</div>
+    <div class="abn">ABN 34 318 502 254 &middot; titanos.tech &middot; Reports delivered from Australia &middot; powered by Claude Code Opus 4.7</div>
+  </div>
+</footer>
+
+<script>
+const p = document.getElementById('particles');
+for(let i=0;i<24;i++){
+  const d = document.createElement('div');
+  d.className = 'dot';
+  d.style.left = Math.random()*100 + '%';
+  d.style.animationDuration = (15 + Math.random()*20) + 's';
+  d.style.animationDelay = (Math.random()*15) + 's';
+  p.appendChild(d);
+}
+</script>
+
+</body>
+</html>
