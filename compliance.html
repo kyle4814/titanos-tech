@@ -104,6 +104,13 @@ section{padding:80px 20px;position:relative}
 .tl-item h4{color:var(--ice);font-size:1rem;font-weight:600;margin-bottom:6px}
 .tl-item p{color:var(--dim);font-size:.88rem;line-height:1.6}
 
+/* Engagement walkthrough steps */
+.walk{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1020px;margin:0 auto;position:relative;z-index:1}
+.walk .wstep{background:var(--card);border:1px solid var(--gold-dim);border-radius:6px;padding:28px 24px;position:relative}
+.walk .wstep .num{font-family:'Cinzel',serif;color:var(--gold);font-size:2.1rem;letter-spacing:.05em;margin-bottom:8px;line-height:1}
+.walk .wstep h4{font-family:'Cinzel',serif;color:var(--gold);font-size:.92rem;letter-spacing:.08em;margin-bottom:12px;line-height:1.4}
+.walk .wstep p{color:var(--text);font-size:.88rem;line-height:1.7}
+
 /* You vs host two-column */
 .you-host{display:grid;grid-template-columns:1fr;gap:20px;max-width:1020px;margin:0 auto}
 @media(min-width:760px){.you-host{grid-template-columns:1fr 1fr;gap:28px}}
@@ -159,7 +166,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <div class="container">
     <span class="brand"><a href="/">TITANOS</a></span>
     <div class="links">
-      <a href="https://api.titanos.tech/lookup">Free Scan</a>
+      <a href="/scan.html">Free Scan</a>
       <a href="/compliance.html">Compliance</a>
       <a href="/ai-delivery.html">AI Implementation</a>
       <a href="/methodology.html">Methodology</a>
@@ -172,13 +179,13 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <div class="container">
     <div class="badge">DEADLINE · 11 DECEMBER 2026</div>
     <h1>Australian Privacy Act Compliance for SMBs</h1>
-    <p class="tagline">New privacy laws take effect 11 December 2026. Penalties up to AU$50 million. Most SMBs have no plan.</p>
-    <p class="sub">We do the diagnostic, give you the evidence pack, and document what your hosting provider needs to fix. Built for Australian SMBs on Squarespace, WordPress, Microsoft 365, and Google Workspace.</p>
+    <p class="tagline">Expert-reviewed &middot; Australian-owned &middot; ABN-verified. New privacy laws take effect 11 December 2026. Penalties up to AU$50 million.</p>
+    <p class="sub">We do the diagnostic, give you the evidence pack, and apply the changes together on a 90-minute working call. Built for Australian SMBs on Squarespace, WordPress, Microsoft 365, and Google Workspace.</p>
     <div style="margin-top:14px">
       <a href="https://api.titanos.tech/compliance/buy/done_with_you" class="btn">Buy Done-With-You · AU$5,997</a>
       <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn secondary">Book a 15-min</a>
     </div>
-    <p class="trust-line"><strong>ABN 34 318 502 254</strong> &middot; Australian-owned &middot; 3,633 businesses scanned &middot; <a href="/methodology.html" style="color:var(--ice)">Methodology</a></p>
+    <p class="trust-line"><strong>ABN 34 318 502 254</strong> &middot; Australian-owned &middot; 3,600+ unique businesses in our scan corpus &middot; <a href="/methodology.html" style="color:var(--ice)">Methodology</a></p>
     <div class="line"></div>
   </div>
 </section>
@@ -268,6 +275,51 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 
 <div class="divider"></div>
 
+<!-- ═══ WHAT THE ENGAGEMENT LOOKS LIKE ═══ -->
+<section id="walkthrough">
+  <div class="container">
+    <div class="sh">
+      <h2>WHAT THE ENGAGEMENT LOOKS LIKE</h2>
+      <div class="line"></div>
+      <p class="lead">Six steps from scan to signed attestation. No PDF-only deliverable, no opaque hand-offs.</p>
+    </div>
+    <div class="walk">
+      <div class="wstep">
+        <div class="num">I</div>
+        <h4>YOU REQUEST A SCAN</h4>
+        <p>We map your external attack surface and feed the findings into the engagement pack.</p>
+      </div>
+      <div class="wstep">
+        <div class="num">II</div>
+        <h4>EVIDENCE PACK</h4>
+        <p>We send your evidence pack (~17pp, 13 sections) for your records &mdash; a regulator-ready artifact.</p>
+      </div>
+      <div class="wstep">
+        <div class="num">III</div>
+        <h4>90-MIN IMPLEMENTATION CALL</h4>
+        <p>We apply the changes together: DNS hygiene, M365/Workspace hardening, privacy policy + ADM disclosure deployed, NDB runbook integrated.</p>
+      </div>
+      <div class="wstep">
+        <div class="num">IV</div>
+        <h4>QUARTERLY RE-SCAN + DELTA</h4>
+        <p>Every 90 days we re-scan and send a delta report. New exposures get flagged; remediated items get logged.</p>
+      </div>
+      <div class="wstep">
+        <div class="num">V</div>
+        <h4>30-DAY REVIEW CALL</h4>
+        <p>We audit what shipped, confirm policy changes are live in customer-facing surfaces, and tune the runbook.</p>
+      </div>
+      <div class="wstep">
+        <div class="num">VI</div>
+        <h4>ATTESTATION + 12 MO BRIEFINGS</h4>
+        <p>Signed compliance attestation letter plus 12 months of industry-specific regulatory briefings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ═══ YOU CONTROL vs HOSTING PROVIDER ═══ -->
 <section id="you-host">
   <div class="container">
@@ -313,11 +365,19 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <div class="grid">
     <div class="item"><strong>13</strong>sections per pack</div>
     <div class="item"><strong>8</strong>ANZSIC class tunings</div>
-    <div class="item"><strong>3,633</strong>businesses scanned</div>
+    <div class="item"><strong>3,600+</strong>unique businesses in scan corpus</div>
     <div class="item"><strong>11 Dec 2026</strong>deadline target</div>
   </div>
   <p class="founder">Built by an Australian operator. Reports stay in Australia. No US-headquartered data processors. <strong style="color:var(--gold)">Kyle Deligny, ABN 34 318 502 254.</strong></p>
 </div>
+
+<!-- ==== SOCIAL PROOF PLACEHOLDER — Kyle to fill ====
+     INSERT REAL testimonials, client names, logos, outcomes here.
+     DO NOT FABRICATE. Leave blank until real content available.
+==== END SOCIAL PROOF PLACEHOLDER ==== -->
+<section class="social-proof-placeholder" style="display:none">
+  <!-- testimonial cards go here when real content lands -->
+</section>
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
@@ -386,7 +446,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 
 <!-- ═══ CROSS-LINKS ═══ -->
 <div class="xlinks">
-  <p>Want to see your current security exposure first? <a href="https://api.titanos.tech/lookup">Free lookup &rarr;</a></p>
+  <p>Want to see your current security exposure first? <a href="/scan.html">Free scan &rarr;</a></p>
   <p>Need an AI build instead? <a href="/ai-delivery.html">AI Implementation for Business &rarr;</a></p>
 </div>
 
@@ -400,14 +460,14 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <footer>
   <div class="container">
     <div class="links">
-      <a href="https://api.titanos.tech/lookup">Free Scan</a>
+      <a href="/scan.html">Free Scan</a>
       <a href="/compliance.html">Compliance</a>
       <a href="/ai-delivery.html">AI Implementation</a>
       <a href="/methodology.html">Methodology</a>
       <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a call</a>
     </div>
     <div>TITANOS &middot; Kyle Deligny &middot; Australia</div>
-    <div class="abn">ABN 34 318 502 254 &middot; titanos.tech &middot; Reports delivered from Australia &middot; powered by Claude Code Opus 4.7</div>
+    <div class="abn">ABN 34 318 502 254 &middot; titanos.tech &middot; Reports delivered from Australia &middot; Expert-reviewed &middot; Australian-owned</div>
   </div>
 </footer>
 

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Free External Security Scan — Titanos</title>
+<meta name="description" content="Free external attack-surface scan for AU/NZ/SG operators. Banner-grade nmap, TLS posture, CVE matches, DNS hygiene. Report emailed within 1 business day. ABN 34 318 502 254.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Free External Security Scan — Titanos">
+<meta property="og:description" content="See what an attacker sees. No login. We email the report within 1 business day. Expert-reviewed, Australian-owned, ABN-verified.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#D4AF37;--gold-dim:#8B7225;--ice:#B9F2FF;--black:#000;--card:#0A0A0A;--border:#1A1A1A;--text:#E0E0E0;--dim:#777;--ok:#4ade80;--no:#f87171}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--black)}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+a{color:var(--ice);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+a:hover{border-bottom-color:var(--ice)}
+
+nav{padding:20px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(0,0,0,.85);backdrop-filter:blur(6px);z-index:10}
+nav .container{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+nav .brand{font-family:'Cinzel',serif;color:var(--gold);font-weight:700;letter-spacing:.1em}
+nav .brand a{color:var(--gold);border-bottom:none}
+nav .links a{margin-left:24px;font-size:.9rem;color:var(--dim)}
+nav .links a:hover{color:var(--ice)}
+
+section{padding:80px 20px;position:relative}
+.container{max-width:1080px;margin:0 auto}
+
+.particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.dot{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:0;animation:drift linear infinite}
+@keyframes drift{0%{opacity:0;transform:translateY(100vh)}8%{opacity:.1}50%{opacity:.1}92%{opacity:.05}100%{opacity:0;transform:translateY(-5vh)}}
+
+.hero{text-align:center;padding:100px 20px 70px;position:relative;z-index:1}
+.hero .badge{display:inline-block;border:1px solid var(--gold-dim);padding:6px 16px;border-radius:24px;font-family:'Cinzel',serif;font-size:.78rem;color:var(--ice);letter-spacing:.1em;margin-bottom:24px}
+.hero h1{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(2.2rem,5.5vw,3.6rem);color:var(--gold);letter-spacing:.04em;margin-bottom:18px;line-height:1.18}
+.hero .tagline{font-size:1.15rem;color:var(--ice);max-width:760px;margin:0 auto 16px;font-weight:300;line-height:1.6}
+.hero .sub{font-size:.95rem;color:var(--dim);max-width:680px;margin:0 auto 32px;line-height:1.7}
+.hero .trust-line{font-size:.85rem;color:var(--dim);max-width:680px;margin:18px auto 0}
+.hero .trust-line strong{color:var(--gold)}
+.line{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--ice),transparent);margin:24px auto 0}
+
+.btn{display:inline-block;padding:16px 32px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.08em;font-size:.92rem;border-radius:3px;transition:all .2s;cursor:pointer}
+.btn:hover{background:var(--gold);color:var(--black);border-bottom-color:var(--gold)}
+.btn.secondary{margin-left:10px;border-color:var(--gold-dim);color:var(--dim)}
+.btn.secondary:hover{background:var(--gold-dim);color:var(--black);border-color:var(--gold-dim)}
+
+.sh{text-align:center;margin-bottom:42px;position:relative;z-index:1}
+.sh h2{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.4rem,3.5vw,2.2rem);color:var(--gold);letter-spacing:.08em}
+.sh .lead{color:var(--ice);font-size:1rem;max-width:680px;margin:18px auto 0;line-height:1.7}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:0 20px}
+
+/* Two-column you/host style for "What it is" / "Who it's for" */
+.two-col{display:grid;grid-template-columns:1fr;gap:20px;max-width:1020px;margin:0 auto;position:relative;z-index:1}
+@media(min-width:760px){.two-col{grid-template-columns:1fr 1fr;gap:28px}}
+.two-col .col{background:var(--card);border:1px solid var(--gold-dim);border-radius:6px;padding:30px 26px}
+.two-col h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.15rem;letter-spacing:.06em;margin-bottom:14px;line-height:1.3}
+.two-col ul{list-style:none}
+.two-col li{color:var(--text);font-size:.92rem;line-height:1.7;padding:6px 0;padding-left:22px;position:relative}
+.two-col li::before{content:'›';position:absolute;left:0;color:var(--gold);font-family:'Cinzel',serif}
+
+/* Numbered process steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:1020px;margin:0 auto;position:relative;z-index:1}
+.step{background:var(--card);border:1px solid var(--gold-dim);border-radius:6px;padding:28px 22px;position:relative}
+.step .num{font-family:'Cinzel',serif;color:var(--gold);font-size:2rem;letter-spacing:.05em;margin-bottom:8px;line-height:1}
+.step h4{font-family:'Cinzel',serif;color:var(--gold);font-size:.88rem;letter-spacing:.08em;margin-bottom:10px;line-height:1.4}
+.step p{color:var(--text);font-size:.86rem;line-height:1.65}
+
+/* Inside-the-report list */
+.inside{max-width:820px;margin:0 auto;position:relative;z-index:1}
+.inside ul{list-style:none;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:24px 28px}
+.inside li{color:var(--text);font-size:.95rem;line-height:1.7;padding:8px 0;padding-left:24px;position:relative}
+.inside li::before{content:'✓';position:absolute;left:0;color:var(--ok);font-weight:600}
+
+/* Methodology mini */
+.method-mini{display:grid;grid-template-columns:1fr;gap:18px;max-width:820px;margin:0 auto;position:relative;z-index:1}
+@media(min-width:680px){.method-mini{grid-template-columns:1fr 1fr;gap:24px}}
+.method-mini .card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:24px 22px}
+.method-mini .card h4{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:.06em;margin-bottom:12px}
+.method-mini .card p{color:var(--text);font-size:.9rem;line-height:1.7;padding:4px 0}
+.method-mini .ok{color:var(--ok);margin-right:8px;font-weight:600}
+.method-mini .no{color:var(--no);margin-right:8px;font-weight:600}
+
+/* REQUEST FORM */
+.form-wrap{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.scan-form{background:var(--card);border:1px solid var(--gold-dim);border-radius:8px;padding:36px 32px;display:flex;flex-direction:column;gap:18px}
+.scan-form label{font-family:'Cinzel',serif;color:var(--ice);font-size:.78rem;letter-spacing:.12em;margin-bottom:6px;display:block}
+.scan-form input[type=text],.scan-form input[type=email],.scan-form textarea{
+  width:100%;background:var(--card);border:1px solid var(--border);border-radius:3px;color:var(--text);
+  font-family:'Inter',sans-serif;font-size:.95rem;padding:12px 14px;line-height:1.5;transition:border-color .2s;
+  outline:none;-webkit-appearance:none
+}
+.scan-form input[type=text]:focus,.scan-form input[type=email]:focus,.scan-form textarea:focus{border-color:var(--gold)}
+.scan-form textarea{min-height:90px;resize:vertical;font-family:'Inter',sans-serif}
+.scan-form .field{display:flex;flex-direction:column}
+.scan-form .consent{display:flex;align-items:flex-start;gap:12px;color:var(--text);font-size:.86rem;line-height:1.6}
+.scan-form .consent input[type=checkbox]{margin-top:4px;flex-shrink:0;width:18px;height:18px;accent-color:var(--gold)}
+.scan-form .consent label{font-family:'Inter',sans-serif;color:var(--text);font-size:.86rem;letter-spacing:0;text-transform:none;margin:0;line-height:1.6}
+.scan-form .submit-row{display:flex;flex-direction:column;gap:14px;align-items:center;margin-top:8px}
+.scan-form button[type=submit]{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;letter-spacing:.08em;font-size:.92rem;padding:16px 32px;border-radius:3px;cursor:pointer;transition:all .2s;width:100%;min-height:48px}
+.scan-form button[type=submit]:hover{background:var(--gold);color:var(--black)}
+.scan-form .secondary-link{font-size:.85rem;color:var(--dim)}
+.scan-form .secondary-link a{color:var(--ice)}
+
+.thanks{background:var(--card);border:1px solid var(--gold);border-radius:8px;padding:48px 36px;text-align:center}
+.thanks h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;letter-spacing:.06em;margin-bottom:14px}
+.thanks p{color:var(--text);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto}
+
+/* Bridge cards */
+.bridge{display:grid;grid-template-columns:1fr;gap:20px;max-width:820px;margin:32px auto 0;position:relative;z-index:1}
+@media(min-width:680px){.bridge{grid-template-columns:1fr 1fr;gap:24px}}
+.bridge .bcard{background:var(--card);border:1px solid var(--gold-dim);border-radius:6px;padding:26px 24px;transition:border-color .2s,transform .2s}
+.bridge .bcard:hover{border-color:var(--gold);transform:translateY(-2px)}
+.bridge .bcard h4{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:.06em;margin-bottom:10px}
+.bridge .bcard p{color:var(--text);font-size:.9rem;line-height:1.65;margin-bottom:14px}
+.bridge .bcard a.bcta{color:var(--ice);font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.08em;border-bottom-color:var(--gold-dim)}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:5px;margin-bottom:12px;transition:border-color .2s}
+.faq details[open]{border-color:var(--gold-dim)}
+.faq summary{cursor:pointer;padding:18px 22px;color:var(--ice);font-weight:500;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;align-items:center;outline:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:'Cinzel',serif;color:var(--gold);font-size:1.3rem;margin-left:14px;flex-shrink:0}
+.faq details[open] summary::after{content:'−'}
+.faq .answer{padding:0 22px 22px;color:var(--text);font-size:.92rem;line-height:1.75}
+
+/* CTA */
+.cta{text-align:center;padding:90px 20px;position:relative;z-index:1}
+.cta h2{font-family:'Cinzel',serif;color:var(--gold);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;margin-bottom:14px;letter-spacing:.05em}
+.cta p{color:var(--ice);font-size:1.02rem;margin-bottom:32px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+footer{padding:50px 20px;border-top:1px solid var(--border);text-align:center;color:var(--dim);font-size:.85rem;position:relative;z-index:1}
+footer a{color:var(--dim)}
+footer .links{margin-bottom:14px}
+footer .links a{margin:0 12px}
+footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
+
+@media(max-width:768px){
+  section{padding:60px 16px}
+  .hero{padding:60px 16px 40px}
+  .btn.secondary{margin-left:0;margin-top:10px;display:inline-block}
+  .scan-form{padding:28px 20px}
+  .scan-form button[type=submit]{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="particles" id="particles"></div>
+
+<nav>
+  <div class="container">
+    <span class="brand"><a href="/">TITANOS</a></span>
+    <div class="links">
+      <a href="/scan.html">Free Scan</a>
+      <a href="/compliance.html">Compliance</a>
+      <a href="/ai-delivery.html">AI Implementation</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="badge">FREE · NO LOGIN · NO CARD</div>
+    <h1>Free External Attack-Surface Scan</h1>
+    <p class="tagline">See what an attacker sees. No login. We email the report within 1 business day.</p>
+    <p class="sub">Banner-grade, expert-reviewed, with a 90-day responsible disclosure window. Built for AU/NZ/SG operators who want to know their actual exposure before a compliance push or AI rollout.</p>
+    <div style="margin-top:14px">
+      <a href="#request" class="btn">Request your free scan</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn secondary">Or book a 15-min</a>
+    </div>
+    <p class="trust-line">Expert-reviewed &middot; Australian-owned &middot; <strong>ABN 34 318 502 254</strong></p>
+    <div class="line"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ WHAT IT IS / WHO IT'S FOR ═══ -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <h2>WHAT IT IS &middot; WHO IT&rsquo;S FOR</h2>
+      <div class="line"></div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <h3>WHAT IT IS</h3>
+        <ul>
+          <li>Banner-grade external scan of your public attack surface</li>
+          <li>90-day responsible-disclosure window on every finding</li>
+          <li>No exploitation, no credential attempts, no DoS &mdash; ever</li>
+          <li>Independently reproducible: every finding ships with the exact <code>nmap</code> command</li>
+          <li>Expert-reviewed before delivery; no auto-generated noise</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>WHO IT&rsquo;S FOR</h3>
+        <ul>
+          <li>AU/NZ/SG operators who own a domain and want their actual exposure</li>
+          <li>CTOs &amp; founders staring down a compliance push or audit</li>
+          <li>IT leads about to greenlight an AI rollout in production</li>
+          <li>MSP-buyers about to renew &mdash; verify before you sign</li>
+          <li>Anyone who wants a sober second opinion, not a sales pitch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ FULL PROCESS ═══ -->
+<section id="process">
+  <div class="container">
+    <div class="sh">
+      <h2>THE FULL PROCESS</h2>
+      <div class="line"></div>
+      <p class="lead">Five steps from form-submit to report-in-inbox. No mystery, no opaque hand-offs.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">I</div>
+        <h4>SUBMIT THE FORM</h4>
+        <p>Domain, work email, name, and any scope notes. Takes under a minute.</p>
+      </div>
+      <div class="step">
+        <div class="num">II</div>
+        <h4>WE QUEUE YOUR SCAN</h4>
+        <p>You&rsquo;re placed in the daily scan queue. No payment, no waiting list game.</p>
+      </div>
+      <div class="step">
+        <div class="num">III</div>
+        <h4>SCAN RUNS</h4>
+        <p><code>nmap -sV</code>, TLS/SSL validation, public DNS + certificate-transparency lookups, NVD CVE matching by version.</p>
+      </div>
+      <div class="step">
+        <div class="num">IV</div>
+        <h4>REPORT DELIVERED</h4>
+        <p>Hosted HTML report linked from an email to your inbox &mdash; within 1 business day.</p>
+      </div>
+      <div class="step">
+        <div class="num">V</div>
+        <h4>YOU DECIDE WHAT&rsquo;S NEXT</h4>
+        <p>Fix it yourself, escalate to your host, or ask us for help. No pressure, no auto-renewal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ INSIDE THE REPORT ═══ -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <h2>WHAT&rsquo;S INSIDE THE REPORT</h2>
+      <div class="line"></div>
+      <p class="lead">One report, every finding ranked, every finding reproducible.</p>
+    </div>
+    <div class="inside">
+      <ul>
+        <li>Public-facing services + open ports (the standard 15-port external sweep)</li>
+        <li>Database exposure flags (any DB port reachable from the public internet)</li>
+        <li>TLS posture &mdash; certificate validity, expiry, signature algorithm, protocol versions</li>
+        <li>Known CVE matches against reported service versions (NVD-sourced)</li>
+        <li>DNS hygiene &mdash; SPF, DKIM, DMARC, CAA, MX, plus cert-transparency findings</li>
+        <li>Host classification &mdash; what you control vs what your hosting provider controls</li>
+        <li>Severity ranking (Critical / High / Medium / Low / Info) + remediation step per finding</li>
+        <li>Reproduction command for every finding &mdash; verify it independently in 30 seconds</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ METHODOLOGY SUMMARY ═══ -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <h2>METHODOLOGY &middot; THE SHORT VERSION</h2>
+      <div class="line"></div>
+      <p class="lead">If a tool would require permission, we don&rsquo;t use it. Period.</p>
+    </div>
+    <div class="method-mini">
+      <div class="card">
+        <h4>WHAT WE DO</h4>
+        <p><span class="ok">✓</span>Banner-grade <code>nmap -sV</code></p>
+        <p><span class="ok">✓</span>TLS / SSL validation</p>
+        <p><span class="ok">✓</span>Public DNS + cert transparency</p>
+        <p><span class="ok">✓</span>NVD CVE matching by version</p>
+      </div>
+      <div class="card">
+        <h4>WHAT WE NEVER DO</h4>
+        <p><span class="no">✗</span>Auth / credential attempts</p>
+        <p><span class="no">✗</span>Exploit attempts</p>
+        <p><span class="no">✗</span>DoS / brute force</p>
+        <p><span class="no">✗</span>Data exfiltration</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:32px"><a href="/methodology.html">Full methodology &rarr;</a></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ REQUEST FORM ═══ -->
+<section id="request">
+  <div class="container">
+    <div class="sh">
+      <h2>REQUEST YOUR FREE SCAN</h2>
+      <div class="line"></div>
+      <p class="lead">Submit the form. We&rsquo;ll email your report within 1 business day. No card, no login.</p>
+    </div>
+    <div class="form-wrap" id="form-wrap">
+      <form class="scan-form" id="scan-form" action="https://api.titanos.tech/scan/request" method="POST">
+        <div class="field">
+          <label for="domain">DOMAIN</label>
+          <input type="text" id="domain" name="domain" required placeholder="example.com.au" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="work_email">WORK EMAIL</label>
+          <input type="email" id="work_email" name="work_email" required placeholder="you@yourcompany.com.au" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="name">YOUR NAME</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="note">NOTES (OPTIONAL)</label>
+          <textarea id="note" name="note" placeholder="Anything we should know (target subdomains, scope, etc.)"></textarea>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" value="true" required>
+          <label for="consent">By requesting, you consent to receive your scan report and occasional related follow-up. Unsubscribe anytime &mdash; reply STOP.</label>
+        </div>
+        <div class="submit-row">
+          <button type="submit">Request your free scan</button>
+          <div class="secondary-link">Or <a href="https://cal.com/kyle-deligny-msvz6s/15min">book a 15-min instead</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ FREE → PAID BRIDGE ═══ -->
+<section>
+  <div class="container">
+    <div class="sh">
+      <h2>WHAT COMES AFTER THE SCAN</h2>
+      <div class="line"></div>
+      <p class="lead">Most teams use the free scan to decide whether they need the Compliance engagement or an AI build. Here&rsquo;s where each fits.</p>
+    </div>
+    <div class="bridge">
+      <div class="bcard">
+        <h4>PRIVACY ACT + ESSENTIAL EIGHT COMPLIANCE</h4>
+        <p>If the scan surfaces gaps and the 11 December 2026 Privacy Act deadline matters to you, the compliance engagement is the next step. One done-with-you call where we apply the changes together.</p>
+        <a href="/compliance.html" class="bcta">SEE THE COMPLIANCE PACK &rsaquo;</a>
+      </div>
+      <div class="bcard">
+        <h4>AI IMPLEMENTATION FOR BUSINESS</h4>
+        <p>If the scan shows you&rsquo;re solid on basics and your real bottleneck is an AI capability you can&rsquo;t free up engineering hours to ship, scope a build with us. Quoted by scope, fixed-price SOW.</p>
+        <a href="/ai-delivery.html" class="bcta">SEE AI IMPLEMENTATION &rsaquo;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq">
+  <div class="container">
+    <div class="sh">
+      <h2>QUESTIONS WE GET</h2>
+      <div class="line"></div>
+    </div>
+    <div class="faq">
+
+      <details>
+        <summary>How long does the scan take?</summary>
+        <div class="answer">Your scan is queued the moment you submit. The report is delivered to your inbox within 1 business day. Most run faster than that &mdash; the SLA is just the worst-case promise.</div>
+      </details>
+
+      <details>
+        <summary>What if my domain is hosted on Squarespace / Webflow / GitHub Pages?</summary>
+        <div class="answer">The scan still works. We split findings into what you control vs what your hosting provider controls, so you don&rsquo;t walk away with a list of things you can&rsquo;t fix. Host-controlled findings come with the exact escalation language to send the provider.</div>
+      </details>
+
+      <details>
+        <summary>Is this exploitation?</summary>
+        <div class="answer">No. Banner-grade only. We probe what the public internet can already see &mdash; service banners, TLS posture, DNS records, certificate transparency. No authentication attempts. No exploit attempts. No DoS. No data exfiltration. Full methodology at <a href="/methodology.html">/methodology</a>.</div>
+      </details>
+
+      <details>
+        <summary>Do you store my data?</summary>
+        <div class="answer">Scan results are kept for our scan corpus so we can show longitudinal exposure trends. Your email goes only into our lead store &mdash; never sold, never shared with third parties, suppressed forever if you reply <code>remove</code>.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <h2>READY TO SEE WHAT AN ATTACKER SEES?</h2>
+  <p>Free, expert-reviewed, delivered within 1 business day. No card, no login, no follow-up sequence.</p>
+  <a href="#request" class="btn">Request your free scan</a>
+  <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn secondary">Book a 15-min</a>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="/scan.html">Free Scan</a>
+      <a href="/compliance.html">Compliance</a>
+      <a href="/ai-delivery.html">AI Implementation</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a call</a>
+    </div>
+    <div>TITANOS &middot; Kyle Deligny &middot; Sydney, Australia</div>
+    <div class="abn">ABN 34 318 502 254 &middot; titanos.tech &middot; Expert-reviewed &middot; Australian-owned</div>
+  </div>
+</footer>
+
+<script>
+// Particles
+const p = document.getElementById('particles');
+for(let i=0;i<24;i++){
+  const d = document.createElement('div');
+  d.className = 'dot';
+  d.style.left = Math.random()*100 + '%';
+  d.style.animationDuration = (15 + Math.random()*20) + 's';
+  d.style.animationDelay = (Math.random()*15) + 's';
+  p.appendChild(d);
+}
+
+// ?thanks=1 → replace form with thank-you panel
+(function(){
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('thanks') === '1') {
+      const wrap = document.getElementById('form-wrap');
+      if (wrap) {
+        wrap.innerHTML = '<div class="thanks"><h3>YOUR SCAN IS QUEUED</h3><p>Check your inbox within 1 business day. The report link will come from <strong style="color:var(--gold)">kyle@titanos.tech</strong> &mdash; add us to your safe-sender list if you use a strict filter.</p></div>';
+        // Scroll to the request anchor so the thank-you is in view
+        const target = document.getElementById('request');
+        if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+  } catch(e) { /* no-op: plain HTML form still works */ }
+})();
+</script>
+
+</body>
+</html>

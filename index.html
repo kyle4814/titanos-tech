@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TITANOS — Three ways we help: Free Scan, Compliance, AI Implementation</title>
-<meta name="description" content="TITANOS helps Australian operators three ways: a free Protective Disclosure scan, AU Privacy Act + Essential Eight compliance (AU$5,997 + $199/mo), and full-cycle AI Implementation for Business. Powered by Claude Code Opus 4.7. ABN 34 318 502 254.">
+<meta name="description" content="TITANOS helps Australian operators three ways: a free external attack-surface scan, AU Privacy Act + Essential Eight compliance (AU$5,997 + $199/mo), and full-cycle AI Implementation for Business. Powered by Claude Code. ABN 34 318 502 254.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="TITANOS — Free Scan · Compliance · AI Implementation">
-<meta property="og:description" content="Three ways Titanos helps: free Protective Disclosure scan, Privacy Act + Essential Eight compliance, and AI Implementation for Business. Powered by Claude Code Opus 4.7.">
+<meta property="og:description" content="Three ways Titanos helps: free external attack-surface scan, Privacy Act + Essential Eight compliance, and AI Implementation for Business. Powered by Claude Code.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +75,8 @@ section{padding:80px 20px;position:relative}
               color:var(--gold);text-decoration:none;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:.08em;
               transition:all .2s;background:rgba(212,175,55,.04);min-height:44px}
 .offer .offer-cta:hover{background:rgba(212,175,55,.12);border-color:var(--gold);border-bottom-color:var(--gold)}
+.offer .offer-learn{display:inline-block;margin-top:12px;color:var(--ice);font-size:.82rem;font-family:'Inter',sans-serif;letter-spacing:.02em;border-bottom-color:transparent}
+.offer .offer-learn:hover{border-bottom-color:var(--ice)}
 
 /* Methodology preview */
 .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;max-width:900px;margin:0 auto}
@@ -108,7 +110,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <div class="container">
     <span class="brand">TITANOS</span>
     <div class="links">
-      <a href="https://api.titanos.tech/lookup">Free Scan</a>
+      <a href="/scan.html">Free Scan</a>
       <a href="/compliance.html">Compliance</a>
       <a href="/ai-delivery.html">AI Implementation</a>
       <a href="/methodology.html">Methodology</a>
@@ -120,9 +122,9 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <section class="hero">
   <div class="container">
     <h1>TITANOS</h1>
-    <p class="tagline">Three ways Titanos helps Australian operators.</p>
-    <p class="sub">Free scans for any AU domain. Privacy Act + Essential Eight compliance done with you. AI Implementation for Business, end-to-end. Built, verified, and delivered by a Claude Code Opus 4.7 instance under expert human review.</p>
-    <div class="live-stat">1,700+ scans run this month · powered by Claude Code Opus 4.7</div>
+    <p class="tagline">Three ways Titanos helps your business.</p>
+    <p class="sub">Free external attack-surface scans for AU/NZ/SG domains. Privacy Act + Essential Eight compliance done with you. AI Implementation for Business, end-to-end. Built, verified, and delivered by Claude Code under expert human review.</p>
+    <div class="live-stat">1,700+ scans this month · 3,600+ unique businesses in scan corpus</div>
     <div class="line"></div>
   </div>
 </section>
@@ -142,14 +144,15 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
       <div class="offer">
         <div class="tag">OFFER 01 · FREE</div>
         <h3>Free Scan</h3>
-        <div class="free">$0<span class="unit" style="color:var(--dim);font-size:.78rem;font-weight:400;display:block;margin-top:4px">no signup · no tracking</span></div>
-        <p class="body">Protective Disclosure Report on any Australian domain. Banner-confirmed external scan delivered free, with a 90-day responsible disclosure window. The report you'd want about your own infrastructure.</p>
+        <div class="free">$0<span class="unit" style="color:var(--dim);font-size:.78rem;font-weight:400;display:block;margin-top:4px">no card · delivered within 1 business day</span></div>
+        <p class="body">External attack-surface scan on any AU/NZ/SG domain. Banner-grade evidence, expert-reviewed, with a 90-day responsible-disclosure window. The report you'd want about your own infrastructure.</p>
         <ul>
-          <li>Any AU domain, ABN-or-domain lookup</li>
+          <li>Domain-or-ABN intake, any AU/NZ/SG host</li>
           <li>Banner-grade evidence, fully reproducible</li>
-          <li>No signup, no email gate, no follow-up sequence</li>
+          <li>Expert-reviewed before delivery</li>
         </ul>
-        <a href="https://api.titanos.tech/lookup" class="offer-cta">RUN A FREE SCAN ›</a>
+        <a href="/scan.html" class="offer-cta">REQUEST YOUR FREE SCAN ›</a>
+        <a href="/scan.html#process" class="offer-learn">Learn more →</a>
       </div>
 
       <div class="offer">
@@ -163,7 +166,8 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
           <li>Signed compliance attestation letter</li>
           <li>Quarterly re-scan + delta report</li>
         </ul>
-        <a href="/compliance.html" class="offer-cta">SEE THE COMPLIANCE PACK ›</a>
+        <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="offer-cta">BOOK A 15-MIN ›</a>
+        <a href="/compliance.html" class="offer-learn">Learn more →</a>
       </div>
 
       <div class="offer">
@@ -175,9 +179,10 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
           <li>Working code in your repo</li>
           <li>Deployed, not "deployable"</li>
           <li>Documented for handover</li>
-          <li>99% Claude Code Opus 4.7 · 1% expert human review</li>
+          <li>99% Claude Code · 1% expert human review</li>
         </ul>
         <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="offer-cta">BOOK A SCOPING CALL ›</a>
+        <a href="/ai-delivery.html" class="offer-learn">Learn more →</a>
       </div>
 
     </div>
@@ -186,12 +191,20 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 
 <div class="trust">
   <div class="grid">
-    <div class="item"><strong>1,700+</strong>scans run this month</div>
-    <div class="item"><strong>23</strong>responsible disclosures sent</div>
+    <div class="item"><strong>1,700+</strong>scans this month</div>
+    <div class="item"><strong>3,600+</strong>unique businesses in scan corpus</div>
     <div class="item"><strong>90 day</strong>responsible disclosure window</div>
     <div class="item"><strong>0%</strong>auth attempts · 0% exploits</div>
   </div>
 </div>
+
+<!-- ==== SOCIAL PROOF PLACEHOLDER — Kyle to fill ====
+     INSERT REAL testimonials, client names, logos, outcomes here.
+     DO NOT FABRICATE. Leave blank until real content available.
+==== END SOCIAL PROOF PLACEHOLDER ==== -->
+<section class="social-proof-placeholder" style="display:none">
+  <!-- testimonial cards go here when real content lands -->
+</section>
 
 <div class="divider"></div>
 
@@ -235,20 +248,20 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   <h2>ONE OPERATOR. THREE WAYS IN.</h2>
   <p>Start with a free scan, ship the compliance pack before December, or scope an AI build. Whichever maps to your problem, the path is the same: tell us what you'd build if delivery wasn't the bottleneck.</p>
   <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn">Book a 15-min call</a>
-  <a href="https://api.titanos.tech/lookup" class="btn secondary">Run a free scan</a>
+  <a href="/scan.html" class="btn secondary">Request your free scan</a>
 </section>
 
 <footer>
   <div class="container">
     <div class="links">
-      <a href="https://api.titanos.tech/lookup">Free Scan</a>
+      <a href="/scan.html">Free Scan</a>
       <a href="/compliance.html">Compliance</a>
       <a href="/ai-delivery.html">AI Implementation</a>
       <a href="/methodology.html">Methodology</a>
       <a href="https://cal.com/kyle-deligny-msvz6s/15min">Book a call</a>
     </div>
     <div>TITANOS · Kyle Deligny · Sydney, Australia</div>
-    <div class="abn">ABN 34 318 502 254 · titanos.tech · powered by Claude Code Opus 4.7</div>
+    <div class="abn">ABN 34 318 502 254 · titanos.tech · powered by Claude Code</div>
   </div>
 </footer>
 
