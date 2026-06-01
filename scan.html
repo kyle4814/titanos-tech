@@ -322,35 +322,25 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
     <div class="sh">
       <h2>REQUEST YOUR FREE SCAN</h2>
       <div class="line"></div>
-      <p class="lead">Submit the form. We&rsquo;ll email your report within 1 business day. No card, no login.</p>
+      <p class="lead">Two ways to start &mdash; both land in Kyle&rsquo;s inbox and we email your report within 1 business day. No card, no login.</p>
     </div>
     <div class="form-wrap" id="form-wrap">
-      <form class="scan-form" id="scan-form" action="https://api.titanos.tech/scan/request" method="POST">
-        <div class="field">
-          <label for="domain">DOMAIN</label>
-          <input type="text" id="domain" name="domain" required placeholder="example.com.au" autocomplete="off">
+      <div class="scan-form" style="text-align:center">
+        <p style="font-size:1.05rem;color:var(--text);margin-bottom:24px">
+          Email <a href="mailto:kyle@titanos.tech?subject=Scan%20request&amp;body=Domain%3A%20%0AYour%20name%3A%20%0ANotes%20%28optional%29%3A%20%0A%0A--%0AI%20consent%20to%20receive%20my%20scan%20report%20and%20occasional%20related%20follow-up.%20Reply%20STOP%20to%20opt%20out." style="color:var(--gold);font-weight:600">kyle@titanos.tech</a> with your domain, your name, and anything we should know about scope.
+        </p>
+        <p style="font-size:.95rem;color:var(--dim);margin-bottom:32px">
+          Or book a 15-minute call &mdash; we&rsquo;ll capture the same details and get the scan moving on the call.
+        </p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="mailto:kyle@titanos.tech?subject=Scan%20request&amp;body=Domain%3A%20%0AYour%20name%3A%20%0ANotes%20%28optional%29%3A%20%0A%0A--%0AI%20consent%20to%20receive%20my%20scan%20report%20and%20occasional%20related%20follow-up.%20Reply%20STOP%20to%20opt%20out." class="btn" style="background:var(--gold);color:#000;padding:14px 28px;border-radius:6px;font-weight:600;text-decoration:none;display:inline-block">EMAIL YOUR SCAN REQUEST &rsaquo;</a>
+          <a href="https://cal.com/kyle-deligny-msvz6s/15min" class="btn" style="background:transparent;color:var(--text);border:1px solid var(--border);padding:13px 27px;border-radius:6px;font-weight:600;text-decoration:none;display:inline-block">BOOK A 15-MIN</a>
         </div>
-        <div class="field">
-          <label for="work_email">WORK EMAIL</label>
-          <input type="email" id="work_email" name="work_email" required placeholder="you@yourcompany.com.au" autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="name">YOUR NAME</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="note">NOTES (OPTIONAL)</label>
-          <textarea id="note" name="note" placeholder="Anything we should know (target subdomains, scope, etc.)"></textarea>
-        </div>
-        <div class="consent">
-          <input type="checkbox" id="consent" name="consent" value="true" required>
-          <label for="consent">By requesting, you consent to receive your scan report and occasional related follow-up. Unsubscribe anytime &mdash; reply STOP.</label>
-        </div>
-        <div class="submit-row">
-          <button type="submit">Request your free scan</button>
-          <div class="secondary-link">Or <a href="https://cal.com/kyle-deligny-msvz6s/15min">book a 15-min instead</a></div>
-        </div>
-      </form>
+        <p style="font-size:.85rem;color:var(--dim);margin-top:28px;line-height:1.6">
+          By emailing or booking, you consent to receive your scan report and occasional related follow-up.<br>
+          Unsubscribe anytime &mdash; reply STOP.
+        </p>
+      </div>
     </div>
   </div>
 </section>
