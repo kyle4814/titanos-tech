@@ -12,6 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://titanos.tech/ai-delivery.html">
+<meta property="og:image" content="https://titanos.tech/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://titanos.tech/og-image.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#D4AF37;--gold-dim:#8B7225;--ice:#B9F2FF;--black:#000;--card:#0A0A0A;--border:#1A1A1A;--text:#E0E0E0;--dim:#777}
@@ -126,6 +136,9 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   .offer-card{padding:34px 24px}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"AI Implementation for Business","provider":{"@type":"Organization","name":"Titanos"},"serviceType":"AI System Implementation","description":"Bespoke AI implementation — problem-solving, planning, building, deployment. Scoping call first, project-quoted.","areaServed":["AU","NZ","SG"],"offers":{"@type":"Offer","price":"4997","priceCurrency":"AUD","priceSpecification":{"@type":"PriceSpecification","valueAddedTaxIncluded":false,"description":"From AU$4,997, project-quoted"}}}
+</script>
 </head>
 <body>
 
@@ -210,7 +223,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <div class="divider"></div>
 
 <!-- ═══ HOW IT WORKS ═══ -->
-<section>
+<section data-aos="fade-up">
   <div class="container">
     <div class="sh">
       <h2>HOW IT WORKS</h2>
@@ -239,7 +252,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <div class="divider"></div>
 
 <!-- ═══ SINGLE OFFER ═══ -->
-<section id="offer">
+<section id="offer" data-aos="fade-up">
   <div class="container">
     <div class="sh">
       <h2>ONE ENGAGEMENT &middot; PROJECT-QUOTED</h2>
@@ -341,5 +354,7 @@ for(let i=0;i<24;i++){
 }
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:600,easing:'ease-out',once:true,offset:60});</script>
 </body>
 </html>

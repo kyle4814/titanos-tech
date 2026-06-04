@@ -12,6 +12,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://titanos.tech/scan.html">
+<meta property="og:image" content="https://titanos.tech/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://titanos.tech/og-image.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#D4AF37;--gold-dim:#8B7225;--ice:#B9F2FF;--black:#000;--card:#0A0A0A;--border:#1A1A1A;--text:#E0E0E0;--dim:#777;--ok:#4ade80;--no:#f87171}
@@ -151,6 +161,9 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
   .scan-form button[type=submit]{width:100%}
 }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Free External Security Scan","provider":{"@type":"Organization","name":"Titanos"},"serviceType":"Vulnerability Scanning","description":"Free banner-grade external attack-surface scan with 90-day responsible-disclosure window. Report emailed within 1 business day.","areaServed":["AU","NZ","SG"],"offers":{"@type":"Offer","price":"0","priceCurrency":"AUD"}}
+</script>
 </head>
 <body>
 
@@ -317,7 +330,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <div class="divider"></div>
 
 <!-- ═══ REQUEST FORM ═══ -->
-<section id="request">
+<section id="request" data-aos="fade-up">
   <div class="container">
     <div class="sh">
       <h2>REQUEST YOUR FREE SCAN</h2>
@@ -348,7 +361,7 @@ footer .abn{margin-top:8px;font-size:.75rem;letter-spacing:.05em;color:#555}
 <div class="divider"></div>
 
 <!-- ═══ FREE → PAID BRIDGE ═══ -->
-<section>
+<section data-aos="fade-up">
   <div class="container">
     <div class="sh">
       <h2>WHAT COMES AFTER THE SCAN</h2>
@@ -458,5 +471,7 @@ for(let i=0;i<24;i++){
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:600,easing:'ease-out',once:true,offset:60});</script>
 </body>
 </html>
